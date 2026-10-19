@@ -1,0 +1,324 @@
+{
+  "_descripcion": "Datos y oraculos de TP6. Valores derivados de los CSV del commit; metricas como [MAE, RMSE, R2].",
+  "baseline_commit": "0a7927254adf629c4668e25d3ceed332ede519d4",
+  "base_url": "http://127.0.0.1:5001",
+  "navegacion": [
+    "/",
+    "/regional",
+    "/ranking",
+    "/severidad",
+    "/pronosticos"
+  ],
+  "T01": {
+    "requisito": "RF-01",
+    "ruta": "/",
+    "h1": "Resumen Nacional",
+    "estado": 200,
+    "navegacion": [
+      "/",
+      "/regional",
+      "/ranking",
+      "/severidad",
+      "/pronosticos"
+    ]
+  },
+  "T02": {
+    "requisito": "RF-01",
+    "ruta": "/",
+    "kpi": {
+      "children": {
+        "fecha": "25/12/2023",
+        "casos": 422,
+        "hr": "30.4%",
+        "cfr": "0.79%"
+      },
+      "adults": {
+        "fecha": "25/12/2023",
+        "casos": 702,
+        "hr": "28.0%",
+        "cfr": "6.74%"
+      }
+    },
+    "figura": "/legacy/figures/national_annual_variation_grid.png",
+    "accesos_rapidos": [
+      "/regional",
+      "/ranking",
+      "/severidad",
+      "/pronosticos"
+    ]
+  },
+  "T03": {
+    "requisito": "RF-02",
+    "pasos": [
+      {
+        "ruta": "/regional",
+        "h2": "HUANUCO — Menores de 5 años",
+        "region": "HUANUCO",
+        "figura": "/legacy/figures/HUANUCO_Children_5_Cases.png",
+        "metricas": {
+          "random_forest": [
+            0.43,
+            0.59,
+            0.94
+          ],
+          "xgboost": [
+            0.45,
+            0.61,
+            0.94
+          ]
+        }
+      },
+      {
+        "ruta": "/regional?grupo=children&region=LORETO",
+        "h2": "LORETO — Menores de 5 años",
+        "region": "LORETO",
+        "figura": "/legacy/figures/LORETO_Children_5_Cases.png",
+        "metricas": {
+          "random_forest": [
+            0.75,
+            1.25,
+            0.9
+          ],
+          "xgboost": [
+            0.78,
+            1.29,
+            0.89
+          ]
+        }
+      }
+    ]
+  },
+  "T04": {
+    "requisito": "RF-02",
+    "pasos": [
+      {
+        "ruta": "/regional?grupo=adults&region=CUSCO",
+        "h2": "CUSCO — Adultos 60+",
+        "metricas": {
+          "random_forest": [
+            0.225,
+            0.311,
+            0.772
+          ],
+          "xgboost": [
+            0.205,
+            0.285,
+            0.809
+          ]
+        }
+      },
+      {
+        "ruta": "/regional?grupo=xxx&region=zzz",
+        "h2": "HUANUCO — Menores de 5 años",
+        "entrada_no_valida": true
+      },
+      {
+        "ruta": "/regional?grupo=children&region=AREQUIPA",
+        "h2": "HUANUCO — Menores de 5 años",
+        "entrada_no_valida": true
+      }
+    ]
+  },
+  "T05": {
+    "requisito": "RF-03",
+    "ruta": "/severidad",
+    "tablas": 2,
+    "filas_por_tabla": 5,
+    "figuras": [
+      "/legacy/figures/national_children_severity.png",
+      "/legacy/figures/national_adults_severity.png"
+    ]
+  },
+  "T06": {
+    "requisito": "RF-03",
+    "ruta": "/severidad",
+    "severidad": {
+      "children": [
+        {
+          "anio": 2019,
+          "hr": "35.84%",
+          "cfr": "0.76%"
+        },
+        {
+          "anio": 2020,
+          "hr": "28.98%",
+          "cfr": "1.85%"
+        },
+        {
+          "anio": 2021,
+          "hr": "25.88%",
+          "cfr": "1.01%"
+        },
+        {
+          "anio": 2022,
+          "hr": "29.34%",
+          "cfr": "0.88%"
+        },
+        {
+          "anio": 2023,
+          "hr": "30.88%",
+          "cfr": "0.81%"
+        }
+      ],
+      "adults": [
+        {
+          "anio": 2019,
+          "hr": "36.13%",
+          "cfr": "6.90%"
+        },
+        {
+          "anio": 2020,
+          "hr": "49.12%",
+          "cfr": "10.93%"
+        },
+        {
+          "anio": 2021,
+          "hr": "46.10%",
+          "cfr": "15.34%"
+        },
+        {
+          "anio": 2022,
+          "hr": "39.52%",
+          "cfr": "9.79%"
+        },
+        {
+          "anio": 2023,
+          "hr": "30.57%",
+          "cfr": "7.17%"
+        }
+      ]
+    }
+  },
+  "T07": {
+    "requisito": "RF-04",
+    "ruta": "/ranking",
+    "grupo": "children",
+    "ranking": [
+      {
+        "region": "UCAYALI",
+        "apariciones": 22,
+        "porcentaje": 91.7
+      },
+      {
+        "region": "LORETO",
+        "apariciones": 22,
+        "porcentaje": 91.7
+      },
+      {
+        "region": "HUANUCO",
+        "apariciones": 9,
+        "porcentaje": 37.5
+      },
+      {
+        "region": "PASCO",
+        "apariciones": 5,
+        "porcentaje": 20.8
+      },
+      {
+        "region": "MADRE DE DIOS",
+        "apariciones": 5,
+        "porcentaje": 20.8
+      }
+    ],
+    "figura": "/legacy/figures/heatmap_and_top3_bars_Children_lt5.png"
+  },
+  "T08": {
+    "requisito": "RF-04",
+    "ruta": "/ranking",
+    "grupo": "adults",
+    "ranking": [
+      {
+        "region": "AREQUIPA",
+        "apariciones": 16,
+        "porcentaje": 88.9
+      },
+      {
+        "region": "CUSCO",
+        "apariciones": 11,
+        "porcentaje": 61.1
+      },
+      {
+        "region": "MOQUEGUA",
+        "apariciones": 9,
+        "porcentaje": 50.0
+      },
+      {
+        "region": "CALLAO",
+        "apariciones": 5,
+        "porcentaje": 27.8
+      },
+      {
+        "region": "APURIMAC",
+        "apariciones": 4,
+        "porcentaje": 22.2
+      }
+    ],
+    "figura": "/legacy/figures/heatmap_and_top3_bars_Adults_60plus.png"
+  },
+  "T09": {
+    "requisito": "RF-05",
+    "ruta": "/pronosticos",
+    "grupo": "children",
+    "metricas": {
+      "random_forest": [
+        0.21,
+        0.296,
+        0.922
+      ],
+      "xgboost": [
+        0.184,
+        0.271,
+        0.935
+      ]
+    },
+    "figura": "/legacy/national_children_cases_ml/national_children_cases_ml_plot.png"
+  },
+  "T10": {
+    "requisito": "RF-05",
+    "ruta": "/pronosticos",
+    "grupo": "adults",
+    "metricas": {
+      "random_forest": [
+        0.107,
+        0.183,
+        0.869
+      ],
+      "xgboost": [
+        0.097,
+        0.168,
+        0.89
+      ]
+    },
+    "figura": "/legacy/national_adults_cases_ml/national_adults_cases_ml_plot.png"
+  },
+  "T11": {
+    "requisito": "RF-06",
+    "ruta": "/legacy/figures/national_annual_variation_grid.png",
+    "estado": 200,
+    "tipo_contenido": "image/*"
+  },
+  "T12": {
+    "requisito": "RF-06",
+    "nota": "Chromium normaliza '..' y '%2e%2e'; usar '..%2f' o el cliente request de Playwright. Con la linea base devuelve 200 (INC-01): el caso fallara hasta corregir el producto.",
+    "rutas": [
+      {
+        "ruta": "/legacy/figures/noexiste.png",
+        "estado_esperado": 404
+      },
+      {
+        "ruta": "/legacy/..%2frequirements.txt",
+        "estado_esperado": 404
+      }
+    ]
+  },
+  "CC-01": {
+    "requisito": "RF-06 (R-07)",
+    "estado": "no ejecutado",
+    "precondicion": "app iniciada sin la carpeta ISPySA-Pneumonia-main",
+    "rutas": [
+      "/",
+      "/regional"
+    ],
+    "esperado": "estado 200 con la pagina 'No se encontró el proyecto legado'"
+  }
+}

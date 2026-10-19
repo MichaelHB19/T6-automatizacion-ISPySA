@@ -1,0 +1,21 @@
+{
+  "name": "e2e-tests",
+  "version": "1.0.0",
+  "description": "Suite de pruebas funcionales automatizadas E2E",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test --project=chromium",
+    "test:mitad": "npx playwright test tests/t01-t06.spec.js --project=chromium",
+    "test:p1": "npx playwright test --project=chromium --output=test-results/p1",
+    "test:p2": "npx playwright test --project=chromium --output=test-results/p2",
+    "test:p3": "npx playwright test --project=chromium --output=test-results/p3",
+    "report": "npx playwright show-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.64.1"
+  }
+}
