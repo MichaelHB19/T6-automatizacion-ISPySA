@@ -25,6 +25,8 @@ monitoreo-salud-publica-iso25000/
     ├── helpers/
     │   ├── navigation.js           # Acciones de navegación reutilizables
     │   └── assertions.js           # Oráculos numéricos y validación de recursos
+    │   ├── fixtures.js             # Capturas finales de las pruebas
+    │   └── tables.js               # Validación de tablas, métricas e imágenes
     ├── tests/
     │   ├── t01-t06.spec.js         # Casos de prueba T01 a T06
     │   └── t07-t12.spec.js         # Casos de prueba T07 a T12
